@@ -70,6 +70,4 @@ ggplot(as.data.frame(tsne$Y), aes((V1),(V2), color=factor(cell_type),show.legend
 
 ```
 
-![GitHub Logo](/Miscel/tsne_simcd_cortex.png)
-
 
