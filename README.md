@@ -29,6 +29,7 @@ Given a count gene expression matrix from single cell RNA-sequencing data as wel
 ``` r
 library(doParallel)
 library(foreach)
+# Loading the shared object files created from .c files based on the steps described in the SimCD installation procedure:
 dyn.load('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_sum.so')
 dyn.load('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_vector.so')
 dyn.load('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_sum_matrix.so')
@@ -45,7 +46,9 @@ source('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_sum_matrix.R')
 source('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_vector.R')
 source('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_matrix.R')
 source('/scratch/user/naminiyakan/hgnbcode/LFC/CRT_MultR.R')
+# Loading the pre-processed CORTEX dataset
 load("/scratch/user/naminiyakan/hgnbcode/LFC/Cortex_data.RData")
+# Running SimCD by passing the pre-processed CORTEX dataset gene expression data, cell-level covariates and gene-dependent covariates
 reshgnb<- scnbr_v4(counts=count_cortex, X=xcov, Z=zcov, K=10, ncores=24, Burnin = 1000L, Collections = 1000L, PGTruncation = 10L, randtry = 2020)
 save.image("/scratch/user/naminiyakan/hgnbcode/LFC/res_cortex_K10.RData")
 
