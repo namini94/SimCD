@@ -4,7 +4,7 @@
 perform clustering and differential expression analysis for single-cell RNA-seq data. SimCD is capable of including both gene- and cell-level biological explanatory variables
 to better model scRNA-seq data and it also obviates the need for any sophisticated pre-processing steps.
 
-![GitHub Logo](/Fig1_A4_cropped.png)
+![GitHub Logo](/Miscel/Fig1_A4_cropped.png)
 
 # Quick Start
 The main function scnbr_V4 takes as input:
