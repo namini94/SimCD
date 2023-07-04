@@ -69,5 +69,5 @@ ggplot(as.data.frame(tsne$Y), aes((V1),(V2), color=factor(cell_type),show.legend
   coord_fixed()
 
 ```
-
+![GitHub Logo](/Miscel/tsne_simcd_cortex_v2.png)
 
