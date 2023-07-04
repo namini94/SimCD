@@ -7,6 +7,9 @@ to better model scRNA-seq data and it also obviates the need for any sophisticat
 
 ## Installation
 After loading the SimCD R and C codes available in the "Src" directory of this github repo, the only remaining installation step is to create shared object files (.so files) from the c codes so that they can be later loaded into R using "dyn.load" function. The shared object files can be created from the C source codes (.c files) using the below script:
+```
+R CMD SHLIB [options] [-o dllname] files
+```
 
 ## Quick Start
 The main function scnbr_V4 takes as input:
