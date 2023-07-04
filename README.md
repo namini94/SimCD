@@ -50,3 +50,24 @@ reshgnb<- scnbr_v4(counts=count_cortex, X=xcov, Z=zcov, K=10, ncores=24, Burnin 
 save.image("/scratch/user/naminiyakan/hgnbcode/LFC/res_cortex_K10.RData")
 
 ```
+
+After that the Gibbs sampling inference procedure is done and SimCD's latent parameters are learned, we can visualize the cell embedding space by plotting the t-SNE visualization of latent space model parameter $\theta_j$ which can be later used for cell clustering. To do this, one can use the below R code:
+
+``` r
+library(Rtsne)
+library(ggplot2)
+tsne<-Rtsne(t(reshgnb$Theta),perplexity = 40,theta=0,pca=FALSE)
+
+ggplot(as.data.frame(tsne$Y), aes((V1),(V2), color=factor(cell_type),show.legend =FALSE)) +
+  labs(colour = "Cell type") +
+  guides(color=FALSE) +
+  geom_point(size=1.5) +
+  xlab(paste0("Dim1")) +
+  ylab(paste0("Dim2")) + 
+  scale_colour_tableau() +
+  theme_bw() + 
+  coord_fixed()
+
+```
+
+
