@@ -5,6 +5,9 @@
 perform clustering and differential expression analysis for single-cell RNA-seq data. SimCD is capable of including both gene- and cell-level biological explanatory variables
 to better model scRNA-seq data and it also obviates the need for any sophisticated pre-processing steps.
 
+## Installation
+After loading the SimCD R and C codes available in the "Src" directory of this github repo, the only remaining installation step is to create shared object files (.so files) from the c codes so that they can be later loaded into R using "dyn.load" function. The shared object files can be created from the C source codes (.c files) using the below script:
+
 ## Quick Start
 The main function scnbr_V4 takes as input:
 
