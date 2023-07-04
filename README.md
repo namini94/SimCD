@@ -71,3 +71,4 @@ ggplot(as.data.frame(tsne$Y), aes((V1),(V2), color=factor(cell_type),show.legend
 ```
 ![GitHub Logo](/Miscel/tsne_simcd_cortex_v2.png)
 
+To do condition-specific differential expression (DE) analysis using SimCD, one can use the derived symmetric Kullback–Leibler (KL) divergence values for each gene based on inferred model parameters $\beta_{g}^{(1)}$ and rank them to extract the full list of DE genes across specific conditions. These values can be accessed from `reshgnb$kl` parameter.
