@@ -10,6 +10,10 @@ After loading the SimCD R and C codes available in the "Src" directory of this g
 ```
 R CMD SHLIB [options] [-o dllname] files
 ```
+As an example one can use the below script to create the shared object files:
+```
+R CMD SHLIB CRT_matrix.c
+```
 
 ## Quick Start
 The main function scnbr_V4 takes as input:
